@@ -39,6 +39,11 @@ class Matrix(Generic[T]):
     def memory(self) -> int:
         return sys.getsizeof(self.__s__) + sys.getsizeof(self.size) + sys.getsizeof(self)
 
+    
+    # TODO: Coordinates are flipped.
+    # Convention would tell (x,y)
+    # instead, the indexing here is (y,x)
+
     def __getitem__(self, position: Tuple) -> T:
         return self.__s__[self.size*position[0] + position[1]]
 
@@ -98,3 +103,9 @@ class Matrix(Generic[T]):
         for i in range(4):
             output.add(self.rotate(1))
         return list(output)
+    
+    def setAt(self, n:int, pos:Tuple[int,int]) -> Matrix:
+        s = self.flat()
+        s[self.size*pos[0] + pos[1]] = n
+        self.__s__ = tuple(s)
+        return self
