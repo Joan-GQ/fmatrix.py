@@ -21,7 +21,7 @@ print(m.flat())
 
 print(m.size) # 4
 
-print(r[2][3]) # 91
+print(r[2][3]) # 191
 
-print(m[2,3])  # 91
+print(m[2,3])  # 191
 ```
