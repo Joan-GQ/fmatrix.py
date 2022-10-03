@@ -6,6 +6,7 @@
 
 ```python
 from fmatrix import *
+
 r = random_matrix()
 
 #  [[209, 111, 96, 9],
